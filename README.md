@@ -1,8 +1,17 @@
-# React + Vite
+# FAst-React-Pizza App Project - React Router With Data Loading
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A project from Udemy "Ultimate React Course 2024: React, Next.js, Redux & More" by Jonas Schmedtmann.
+Part 4: Section 22: React Router With Data Loading: New Project: "Fast React Pizza Co."
 
-Currently, two official plugins are available:
+## Local Development Scripts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Open the terminal in VSCode, make sure you are in the project's directory, and run:
+
+### `npm run dev`
+
+Runs the app in the development mode.\
+
+Ctrl click [http://localhost:5173](http://localhost:5173) to open in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
