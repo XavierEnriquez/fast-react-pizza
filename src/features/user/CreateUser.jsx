@@ -1,14 +1,17 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 function CreateUser() {
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className="mx-auto flex max-w-72 flex-col gap-4"
+    >
       <p>👋 Welcome! Please start by telling us your name:</p>
 
       <input
@@ -18,9 +21,9 @@ function CreateUser() {
         onChange={(e) => setUsername(e.target.value)}
       />
 
-      {username !== '' && (
+      {username !== "" && (
         <div>
-          <button>Start ordering</button>
+          <button className="bg-yellow-500">Place your order</button>
         </div>
       )}
     </form>
