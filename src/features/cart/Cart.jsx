@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Button from "../../ui/Button";
 
 const fakeCart = [
   {
@@ -28,19 +28,20 @@ function Cart() {
   const cart = fakeCart;
 
   return (
-    <div>
-      <Link
-        to="/menu"
-        className="text-sm font-semibold text-blue-500 hover:text-blue-600"
-      >
-        &larr; Back to menu
-      </Link>
+    <div className="mx-auto flex max-w-2xl flex-col justify-center gap-8">
+      <div>
+        <Button type="link" to="/menu" className="link">
+          &larr; Back to menu
+        </Button>
+      </div>
 
       <h2>Your cart, %NAME%</h2>
 
-      <div>
-        <Link to="/order/new">Order pizzas</Link>
-        <button>Clear cart</button>
+      <div className="flex flex-row items-center gap-4">
+        <Button type="link" to="/order/new" className="primary">
+          Order pizzas
+        </Button>
+        <Button className="link">Clear cart</Button>
       </div>
     </div>
   );
