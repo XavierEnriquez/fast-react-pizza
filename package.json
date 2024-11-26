@@ -30,17 +30,5 @@
     "tailwindcss": "^3.4.15",
     "vite": "^4.4.5",
     "vite-plugin-eslint": "^1.8.1"
-  },
-  "prettier": {
-    "plugins": [
-      "prettier-plugin-tailwindcss"
-    ],
-    "tailwindStylesheet": "./resources/css/app.css",
-    "tailwindAttributes": [
-      "myClassList"
-    ],
-    "tailwindFunctions": [
-      "clsx"
-    ]
   }
 }
