@@ -36,6 +36,14 @@
       "prettier-plugin-tailwindcss"
     ],
     "tailwindStylesheet": "./resources/css/app.css",
-    "tailwindConfig": "./styles/tailwind.config.js"
+    "tailwindConfig": "./tailwind.config.js",
+    "tailwindPreserveWhitespace": false,
+    "tailwindAttributes": [
+      "myClassList"
+    ],
+    "tailwindFunctions": [
+      "clsx",
+      "tw"
+    ]
   }
 }
