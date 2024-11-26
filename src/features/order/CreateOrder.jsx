@@ -37,42 +37,44 @@ function CreateOrder() {
   const cart = fakeCart;
 
   return (
-    <div className="m-auto flex max-w-96 flex-col gap-6">
-      <h2 className="text-lg">Ready to order? Let&apos;s go!</h2>
+    <div className="m-auto flex max-w-xl flex-col gap-6">
+      <h2 className="text-lg font-semibold">Ready to order? Let&apos;s go!</h2>
 
-      <Form method="POST" className="flex flex-col gap-4">
-        <div className="flex flex-col gap-1">
-          <label>Name</label>
-          <div>
-            <Input type="text" name="customer" required={true} />
-          </div>
+      <Form method="POST" className="flex flex-col gap-6">
+        <div className="flex flex-wrap gap-2 sm:flex-row sm:flex-nowrap sm:items-center">
+          <label className="sm:basis-36">Name</label>
+          <Input type="text" name="customer" required={true} />
         </div>
 
-        <div className="flex flex-col gap-1">
-          <label>Phone number</label>
-          <div>
+        <div className="flex flex-col">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+            <label className="sm:basis-36">Phone number</label>
             <Input type="tel" name="phone" required={true} />
           </div>
-          {formErrors?.phone && <p>{formErrors.phone}</p>}
-        </div>
-
-        <div className="flex flex-col gap-1">
-          <label>Address</label>
-          <div>
-            <Input type="text" name="address" required={true} />
+          <div className="justify-items-center sm:justify-items-end">
+            {formErrors?.phone && (
+              <p className="error_message mt-2">{formErrors.phone}</p>
+            )}
           </div>
         </div>
 
-        <div className="flex gap-2 align-middle">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+          <label className="sm:basis-36">Address</label>
+          <Input type="text" name="address" required={true} />
+        </div>
+
+        <div className="mt-4 flex gap-4 align-middle">
           <input
-            className="h-6 w-6"
+            className="h-6 w-6 accent-yellow-400 focus:outline-none focus:ring focus:ring-yellow-400 focus:ring-offset-2"
             type="checkbox"
             name="priority"
             id="priority"
             // value={withPriority}
             // onChange={(e) => setWithPriority(e.target.checked)}
           />
-          <label htmlFor="priority">Want to yo give your order priority?</label>
+          <label htmlFor="priority" className="font-medium">
+            Want to yo give your order priority?
+          </label>
         </div>
         <div className="flex justify-end pt-2">
           <Button className="primary" disabled={isSubmitting}>
