@@ -10,7 +10,7 @@ function AppLayout() {
     <div className="grid h-screen grid-rows-[auto_1fr_auto]">
       {isLoading && <LoaderIndicator />}
       <Header />
-      <main className="max-w[45rem] mx-auto overflow-auto p-8">
+      <main className="overflow-auto px-4 pb-4 pt-8 md:px-8 md:pb-8 md:pt-16">
         <Outlet />
       </main>
       <CartOverview />
