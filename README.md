@@ -1,4 +1,4 @@
-# FAst-React-Pizza App Project - React Router With Data Loading
+# Fast-React-Pizza App Project - React Router With Data Loading
 
 A project from Udemy "Ultimate React Course 2024: React, Next.js, Redux & More" by Jonas Schmedtmann.
 Part 4: Section 22: React Router With Data Loading: New Project: "Fast React Pizza Co."
