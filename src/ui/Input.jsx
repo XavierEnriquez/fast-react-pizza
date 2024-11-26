@@ -1,10 +1,19 @@
-function Input({ className, placeholder, name, value, onChange, required }) {
+function Input({
+  className,
+  placeholder,
+  name,
+  value,
+  defaultValue,
+  onChange,
+  required,
+}) {
   return (
     <input
       className={`input ${className}`}
       placeholder={placeholder}
       name={name}
       value={value}
+      defaultValue={defaultValue}
       onChange={onChange}
       required={required}
     />
