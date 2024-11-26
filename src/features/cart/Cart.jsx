@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import Button from "../../ui/Button";
 import CartItem from "./CartItem";
 
@@ -27,6 +28,7 @@ const fakeCart = [
 
 function Cart() {
   const cart = fakeCart;
+  const username = useSelector((state) => state.user.username);
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col justify-center gap-8">
@@ -36,7 +38,7 @@ function Cart() {
         </Button>
       </div>
 
-      <h2 className="mt-6 text-xl font-semibold">Your cart, %NAME%</h2>
+      <h2 className="mt-6 text-xl font-semibold">{username}&apos;s cart</h2>
 
       <ul className="divide-y divide-stone-300 border-y">
         {cart.map((item) => (
