@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Button from "../../ui/Button";
 
 function CartOverview() {
   return (
@@ -7,9 +7,9 @@ function CartOverview() {
         <span>23 pizzas</span>
         <span>$23.45</span>
       </p>
-      <Link to="/cart" className="text-nowrap">
+      <Button type="link" to="/cart" className="link_cart">
         Open cart &rarr;
-      </Link>
+      </Button>
     </div>
   );
 }
