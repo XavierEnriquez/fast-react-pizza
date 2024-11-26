@@ -41,14 +41,14 @@ function CreateOrder() {
       <h2 className="text-lg">Ready to order? Let&apos;s go!</h2>
 
       <Form method="POST" className="flex flex-col gap-4">
-        <div>
-          <label>First Name</label>
+        <div className="flex flex-col gap-1">
+          <label>Name</label>
           <div>
             <Input type="text" name="customer" required={true} />
           </div>
         </div>
 
-        <div>
+        <div className="flex flex-col gap-1">
           <label>Phone number</label>
           <div>
             <Input type="tel" name="phone" required={true} />
@@ -56,7 +56,7 @@ function CreateOrder() {
           {formErrors?.phone && <p>{formErrors.phone}</p>}
         </div>
 
-        <div>
+        <div className="flex flex-col gap-1">
           <label>Address</label>
           <div>
             <Input type="text" name="address" required={true} />
