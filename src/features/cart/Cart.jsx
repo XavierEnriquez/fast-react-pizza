@@ -1,4 +1,5 @@
 import Button from "../../ui/Button";
+import CartItem from "./CartItem";
 
 const fakeCart = [
   {
@@ -35,7 +36,13 @@ function Cart() {
         </Button>
       </div>
 
-      <h2>Your cart, %NAME%</h2>
+      <h2 className="mt-6 text-xl font-semibold">Your cart, %NAME%</h2>
+
+      <ul className="divide-y divide-stone-300 border-y">
+        {cart.map((item) => (
+          <CartItem item={item} key={item.pizzaId} />
+        ))}
+      </ul>
 
       <div className="flex flex-row items-center gap-4">
         <Button type="link" to="/order/new" className="primary">
