@@ -1,34 +1,18 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+import { getUsername } from "../user/userSlice";
+import { clearCart, getCart } from "./cartSlice";
 import Button from "../../ui/Button";
 import CartItem from "./CartItem";
-
-const fakeCart = [
-  {
-    pizzaId: 12,
-    name: "Mediterranean",
-    quantity: 2,
-    unitPrice: 16,
-    totalPrice: 32,
-  },
-  {
-    pizzaId: 6,
-    name: "Vegetale",
-    quantity: 1,
-    unitPrice: 13,
-    totalPrice: 13,
-  },
-  {
-    pizzaId: 11,
-    name: "Spinach and Mushroom",
-    quantity: 1,
-    unitPrice: 15,
-    totalPrice: 15,
-  },
-];
+import EmptyCart from "./EmptyCart";
 
 function Cart() {
-  const cart = fakeCart;
-  const username = useSelector((state) => state.user.username);
+  const cart = useSelector(getCart);
+  const username = useSelector(getUsername);
+
+  const dispatch = useDispatch();
+
+  if (!cart.length) return <EmptyCart />;
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col justify-center gap-8">
@@ -50,7 +34,9 @@ function Cart() {
         <Button type="link" to="/order/new" className="primary">
           Order pizzas
         </Button>
-        <Button className="secondary">Clear cart</Button>
+        <Button onClick={() => dispatch(clearCart())} className="secondary">
+          Clear cart
+        </Button>
       </div>
     </div>
   );
