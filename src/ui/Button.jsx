@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 /*Using clsx to sort Tailwind css classes in text strings passed on into a function. clsx is a (239B) utility for constructing className strings conditionally by Luke Edwards. https://github.com/lukeed/clsx  */
 
-function Button({ type, className, to, disabled, children }) {
+function Button({ type, className, to, disabled, children, onClick }) {
   const base = clsx(
     "inline-block rounded-xl font-bold uppercase tracking-wide transition-all duration-300 focus:outline-none focus:ring focus:ring-offset-2 disabled:cursor-not-allowed",
   );
@@ -18,7 +18,7 @@ function Button({ type, className, to, disabled, children }) {
     "bg-yellow-400 px-3 py-2 text-sm text-stone-700 hover:bg-yellow-300 focus:ring-yellow-300 sm:px-4 sm:py-3",
   );
   const link = clsx(
-    "text-nowrap px-4 py-3 text-sm font-semibold text-blue-500 hover:text-blue-600",
+    "text-nowrap p-1 text-sm font-semibold text-blue-500 hover:text-blue-600",
   );
   const link_cart = clsx(
     "text-nowrap px-4 py-3 font-semibold hover:text-white/60",
@@ -40,7 +40,7 @@ function Button({ type, className, to, disabled, children }) {
     );
 
   return (
-    <button className={styles[className]} disabled={disabled}>
+    <button className={styles[className]} disabled={disabled} onClick={onClick}>
       {children}
     </button>
   );
