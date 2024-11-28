@@ -18,10 +18,10 @@ function Button({ type, className, to, disabled, children, onClick }) {
     "bg-yellow-400 px-3 py-2 text-xs text-stone-700 hover:bg-yellow-300 focus:ring-yellow-300 sm:px-4 sm:py-3",
   );
   const round = clsx(
-    "inline-block rounded-full bg-yellow-400 p-2 text-xs font-bold uppercase text-stone-700 transition-all duration-300 hover:bg-yellow-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-offset-2 disabled:cursor-not-allowed sm:px-3",
+    "inline-block rounded-full bg-yellow-400 p-1 text-xs font-bold uppercase text-stone-700 transition-all duration-300 hover:bg-yellow-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-offset-1 disabled:cursor-not-allowed",
   );
   const isDelete = clsx(
-    "border-2 border-red-300 px-2 py-1 text-xs text-red-400 hover:border-red-400 hover:bg-red-400 hover:text-red-50 focus:ring-yellow-300 sm:px-3 sm:py-2",
+    "border-2 border-red-300 px-2 py-1 text-xs text-red-400 hover:bg-red-400 hover:text-red-50 focus:ring-red-200 sm:px-3 sm:py-2",
   );
   const link = clsx(
     "text-nowrap p-1 text-sm font-semibold text-blue-500 hover:text-blue-600",
