@@ -1,14 +1,17 @@
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 import { formatCurrency } from "../../utils/helpers";
 import { getCartQuantity, getCartTotal } from "./cartSlice";
 import Button from "../../ui/Button";
 
 function CartOverview() {
+  const page = useLocation().pathname;
+
   const cartQuantity = useSelector(getCartQuantity);
   const cartTotal = useSelector(getCartTotal);
 
-  if (!cartQuantity) return null;
+  if (!cartQuantity || page === "/cart") return null;
 
   return (
     <div className="flex flex-wrap items-center justify-between gap-4 bg-stone-800 px-8 py-4 uppercase text-stone-200">
