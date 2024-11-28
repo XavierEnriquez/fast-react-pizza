@@ -8,9 +8,7 @@ import EmptyCart from "./EmptyCart";
 
 function Cart() {
   const cart = useSelector(getCart);
-
   const username = useSelector(getUsername);
-
   const dispatch = useDispatch();
 
   if (!cart.length) return <EmptyCart />;
@@ -23,7 +21,9 @@ function Cart() {
         </Button>
       </div>
 
-      <h2 className="mt-6 text-xl font-semibold">{username}&apos;s cart</h2>
+      <h2 className="mt-6 text-xl font-semibold">
+        {username ? `${username}'s cart` : "Your Cart"}
+      </h2>
 
       <ul className="divide-y divide-stone-300 border-y">
         {cart.map((item) => (
