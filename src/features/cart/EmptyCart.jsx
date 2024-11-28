@@ -8,7 +8,7 @@ function EmptyCart() {
       </Button>
 
       <p className="text-lg font-semibold">
-        Your cart is empty. Visit our menu to order some pizzas :)
+        Your cart is empty! Quickly, go to the menu and choose some pizzas :)
       </p>
     </div>
   );
