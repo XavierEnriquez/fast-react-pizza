@@ -1,7 +1,9 @@
 function Input({
   className,
+  type,
   placeholder,
   name,
+  id,
   value,
   defaultValue,
   onChange,
@@ -9,9 +11,11 @@ function Input({
 }) {
   return (
     <input
-      className={`input ${className}`}
+      className={className}
+      type={type}
       placeholder={placeholder}
       name={name}
+      id={id}
       value={value}
       defaultValue={defaultValue}
       onChange={onChange}
