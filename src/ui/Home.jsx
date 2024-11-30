@@ -7,8 +7,8 @@ function Home() {
 
   return (
     <div className="mt-[15vmin] text-center">
-      <h1 className="mb-10 text-3xl font-semibold">
-        The best pizza.
+      <h1 className="mb-10 text-3xl font-semibold md:text-4xl">
+        The Best Pizza.
         <br />
         <span className="font-bold text-yellow-500">
           Hot from the oven, straight to you.
@@ -18,7 +18,7 @@ function Home() {
         <CreateUser />
       ) : (
         <Button type="link" to="/menu" className="primary">
-          Hey {username}, get your pizza!
+          Hey {username}, order your pizza!
         </Button>
       )}
     </div>
