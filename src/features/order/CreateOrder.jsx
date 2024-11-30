@@ -27,6 +27,8 @@ function CreateOrder() {
   } = useSelector((state) => state.user);
 
   const isLoadingAddress = addressStatus === "loading";
+  const lat = position.latitude;
+  const lng = position.longitude;
 
   const cart = useSelector(getCart);
   const subTotal = useSelector(getCartTotal);
@@ -108,7 +110,7 @@ function CreateOrder() {
             <label htmlFor="address" className="sm:basis-36">
               Address
             </label>
-            <Input
+            <input
               className="input"
               type="text"
               name="address"
@@ -119,6 +121,7 @@ function CreateOrder() {
             />
           </div>
         </div>
+
         <div className="mt-4 flex gap-4 align-middle">
           <Input
             className="checkbox"
@@ -152,6 +155,11 @@ function CreateOrder() {
           </div>
         </div>
         <input type="hidden" name="cart" value={JSON.stringify(cart)} />
+        <input
+          type="hidden"
+          name="position"
+          value={lat && lng ? `${lat}, ${lng}` : ""}
+        />
       </Form>
     </div>
   );
