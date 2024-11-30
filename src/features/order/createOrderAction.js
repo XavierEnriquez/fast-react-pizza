@@ -5,12 +5,13 @@ import { clearCart } from "../cart/cartSlice";
 
 import store from "../../store";
 
-// https://uibakery.io/regex-library/phone-number
+// Phone number validation --  https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
   /^\+?\d{1,3}?[-.\s]?\(?\d{1,2}?\)?[-.\s]?\d{1,3}[-.\s]?\d{1,3}[-.\s]?\d{1,5}?[-.\s]?\d{1,6}[-.\s]?\d{1,4}[-.\s]?\d{1,8}[-.\s]?\d{1,9}[-.\s]?\d{1,9}$/.test(
     str,
   );
 
+// "function action" is a Redux Toolkit function. In this case it collects the form data from CreateOrder.jsx, passes it to createOrder function in apiRestaurant.js which in turn does a POST api call to create the new order in the database. And it finally re-directs the user to /order/newOrder.id page.
 export async function action({ request }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
@@ -29,6 +30,7 @@ export async function action({ request }) {
 
   const newOrder = await createOrder(order);
 
+  /* After creating and posting the new order and before redirecting the user to the new order page, clear the cart. Importing the store into a redux function and calling another function, in this case clearCart, to manipulate the store should only be done if completely necessary.*/
   store.dispatch(clearCart());
 
   return redirect(`/order/${newOrder.id}`);
