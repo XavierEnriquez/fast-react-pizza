@@ -11,7 +11,7 @@ function CartOverview() {
   const cartQuantity = useSelector(getCartQuantity);
   const cartTotal = useSelector(getCartTotal);
 
-  if (!cartQuantity || page === "/cart") return null;
+  if (!cartQuantity || page === "/cart" || page === "/order/new") return null;
 
   return (
     <div className="flex flex-wrap items-center justify-between gap-4 bg-stone-800 px-8 py-4 uppercase text-stone-200">
@@ -19,6 +19,7 @@ function CartOverview() {
         <span>{cartQuantity} pizzas</span>
         <span> {formatCurrency(cartTotal)}</span>
       </p>
+
       <Button type="link" to="/cart" className="link_cart">
         Go to cart &rarr;
       </Button>
