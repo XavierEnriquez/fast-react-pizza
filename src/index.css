@@ -7,6 +7,10 @@
     @apply w-full rounded-xl border border-stone-200 px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring focus:ring-yellow-400 sm:px-5 sm:py-3;
   }
 
+  .checkbox {
+    @apply h-6 w-6 accent-yellow-400 focus:outline-none focus:ring focus:ring-yellow-400 focus:ring-offset-2;
+  }
+
   .error_message {
     @apply rounded-md bg-red-100 px-2 py-1 text-sm text-red-700;
   }
