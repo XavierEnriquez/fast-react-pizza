@@ -33,7 +33,7 @@ function Cart() {
 
       <div className="flex flex-row items-center gap-4">
         <Button type="link" to="/order/new" className="primary">
-          Order pizzas
+          Ready to Order
         </Button>
         <Button onClick={() => dispatch(clearCart())} className="secondary">
           Clear cart
